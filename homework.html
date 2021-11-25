@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        canvas {
+            background-color: rgb(83, 83, 194);
+        }
+    </style>
+
+<script>
+    function drawable(){
+        var n=document.getElementById("num").value;
+        var graphValues=n.split(',');
+
+
+        var canvas=document.getElementById('myCanvas');
+        var ctx=canvas.getContext('2d');
+
+        var width=40;
+        var x=50;
+
+        ctx.fillStyle= "grey";
+        for(var i=0; i<graphValues.length; i++){
+            var h=graphValues[i];
+            ctx.fillRect(x, canvas.height-h,width,h);
+            x += width+15;
+        }
+
+
+    }
+
+
+
+
+function reset(){
+    var canvas=documnet.getElementById('myCanvas');
+    var ctx=canvas.getContext('2d');
+    ctx.ClearRect(0, 0, canvas.width, canvas.height);
+
+}
+
+
+
+</script>
+
+</head>
+<body allign="center">
+
+    <p style="color:rgb(87, 83, 82);"><b>Insert values</b></p><br>
+
+    <input type="text" name="number" id="num"><br>
+    <input type="button" value="submit" name="submit" onclick="drawable()"><br>
+
+    <canvas  id="myCanvas"  width="400" height="300" style="border:2px solid rgb(41, 35, 35);">
+    </canvas>
+
+</body>
+</html>
