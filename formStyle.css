@@ -96,3 +96,10 @@
 {
     background: rgb(44 43 42 / 47%);
 }
+
+#dynamicDiv{
+	display: flex;
+	justify-content: center;
+	position:relative;
+
+}
