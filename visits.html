@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <title>ZOO Catalog</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+        <link rel="stylesheet" href="ZooBodyStyle.css">
+        <link rel="stylesheet" href="formStyle.css">
+
+        <script src="LoadingSimulator.js"></script>
+        
+    </head>
+    <body>
+        <div id="main_menu">
+            <div class="logo_area">
+                <a href="./main.html"><img src="./pictures/logotransparent.png" alt="" ></a>
+            </div>
+            <div class="inner_main_menu">
+                <ul id="menu">
+                    <li><a href="./main.html">Home</a></li>
+                    <li><a href="./catalog.html">Animals</a></li>
+                    <li><a href="./visits.html">Visits</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="regForm">
+            <form>
+                <fieldset>
+                <legend><span class="number">Step 1</span> Your Info</legend>
+                <input type="text" name="field1" placeholder="Your Name:">
+                <input type="email" name="field2" placeholder="Your Email:">
+                
+                   
+                </fieldset>
+                <fieldset>
+                <legend><span class="number">Step 2</span>Purchase Info</legend>
+                <input type="text" name="field3" placeholder="Number of tickets:">
+                <input type="date" name="field4" id="dtpicker" placeholder="When Are You Visiting?">
+                </fieldset>
+                
+                <fieldset>
+                    <legend><span class="number">Step 3</span>Payment Info</legend>
+                <select id="PaymentType" name="field5">
+                    <option value="cash">Cash</option>
+                      <option value="card">Card</option>
+                </select>
+                <input type="checkbox" id="aggTerms" name="aggTerms" value="Bike">
+                <label for="aggTerms">I agree to the Terms and Conditions and Privacy Policy</label><br>
+                    </fieldset>
+                <input type="submit" id="submitbtn" value="Submit Purchase" />
+                </form>
+
+        </div>
+        
+
+
+        <div class="container">
+            <div id="load"></div>
+        </div>
+
+    </body>
+
+    <script>
+    document.querySelector('.regForm').style.display='none';
+    document.getElementById('load').classList.add('loader');
+
+
+    setTimeout(()=>{  
+    document.getElementById('load').classList.remove('loader');
+    document.querySelector('.regForm').style.display='block';
+  
+    },3000)
+
+    const picker = document.getElementById('dtpicker');
+    picker.addEventListener('input', function(e){
+  var day = new Date(this.value).getUTCDay();
+  if([0,1].includes(day)){
+    e.preventDefault();
+    this.value = '';
+    alert('Sundays and Mondays are not available');
+  }
+});
+
+    // const btnSubmit=document.getElementById('submitbtn');
+    // btnSubmit.addEventListener('click',function(e){
+
+    // document.querySelector('.regForm').style.display='none';
+    // document.getElementById('load').classList.add('loader');
+    // setTimeout(()=>{  
+    // document.getElementById('load').classList.remove('loader');
+    // document.querySelector('.regForm').style.display='block';
+
+    // },2000);       
+    //  alert('pruchase completed');
+
+    // });
+
+    </script>
+</html>

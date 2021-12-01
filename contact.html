@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <title>ZOO Catalog</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+        <link rel="stylesheet" href="formStyle.css">
+        <link rel="stylesheet" href="ZooBodyStyle.css">
+    
+    </head>
+    <body>
+        <div id="main_menu">
+            <div class="logo_area">
+                <a href="./main.html"><img src="./pictures/logotransparent.png" alt=""></a>
+            </div>
+            <div class="inner_main_menu">
+                <ul id="menu">
+                    <li><a href="./main.html">Home</a></li>
+                    <li><a href="./catalog.html">Animals</a></li>
+                    <li><a href="./visits.html">Visits</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="mapouter"><div class="gmap_canvas">
+            <iframe width="496" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=padurea%20baneasa&t=k&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://putlocker-is.org">putlocker</a><br><style>.mapouter{position:absolute;text-align:right;height:290px;width:496px;top: 400px; left: 1000px;opacity: 90%;border-style: solid;}</style>
+                <a href="https://www.embedgooglemap.net">google map iframe</a>
+                <style>.gmap_canvas {overflow:hidden;background:none!important;height:290px;width:496px;}</style>
+        </div></div>
+
+        <div class="container">
+            <div id="load"></div>
+        </div>
+
+    </body>
+
+    <script>
+        document.querySelector('.mapouter').style.display='none';
+        document.getElementById('load').classList.add('loader');
+    
+    
+        setTimeout(()=>{  
+        document.getElementById('load').classList.remove('loader');
+        document.querySelector('.mapouter').style.display='block';
+      
+        },3000)
+    
+        </script>
+</html>

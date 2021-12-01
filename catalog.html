@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
+    <title>ZOO Catalog</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+    <link rel="stylesheet" href="ZooBodyStyle.css">
+    <script src="LoadingSimulatorCatalog.js"></script>
+    <script src="catalogCanvas.js"></script>
+
+<style>
+    
+.flex-container {
+
+display: flex;
+flex-wrap: wrap;
+padding: 0 4px;
+/* width: 100%;
+height: auto; */
+
+}
+
+.flex-item {
+
+flex: 25%;
+max-width: 25%;
+padding: 0 4px;
+
+}
+
+.canStyle {
+
+width:100%;
+border-style:dashed;
+
+}
+@media (max-width: 800px) {
+.flex-item {
+flex: 50%;
+max-width: 50%;
+}
+}
+@media (max-width: 600px) {
+.flex-item {
+flex: 100%;
+max-width: 100%;
+}
+}
+    </style>
+    
+</head>
+<body onload="init()">
+    <div id="main_menu">
+        <div class="logo_area">
+            <a href="./main.html"><img src="./pictures/logotransparent.png" alt="" ></a>
+        </div>
+        <div class="inner_main_menu">
+            <ul id="menu">
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./catalog.html">Animals</a></li>
+                <li><a href="./visits.html">Visits</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="load"></div>
+    </div>
+
+    <div class="flex-container" >
+
+            <div class="flex-item">
+                    <canvas id="c1" class="canStyle"></canvas>            
+                    <canvas id="c2" class="canStyle"></canvas>           
+                    <canvas id="c3" class="canStyle"></canvas>
+                    <canvas id="c4" class="canStyle"></canvas>
+                    <canvas id="c5" class="canStyle"></canvas>
+                    <canvas id="c6" class="canStyle"></canvas>
+                </div>
+
+                <div class="flex-item">
+                    <canvas id="c7" class="canStyle "></canvas>                
+                    <canvas id="c8" class="canStyle"></canvas>   
+                    <canvas id="c9" class="canStyle"></canvas>
+                    <canvas id="c10" class="canStyle"></canvas>
+                    <canvas id="c11" class="canStyle"></canvas>
+                    <canvas id="c12" class="canStyle"></canvas>
+                    </div>
+            
+                    <div class="flex-item">
+                    <canvas id="c13" class="canStyle "></canvas>                
+                    <canvas id="c14" class="canStyle"></canvas>                 
+                    <canvas id="c15" class="canStyle"></canvas>  
+                    <canvas id="c16" class="canStyle"></canvas>
+                    <canvas id="c17" class="canStyle"></canvas>
+                    <canvas id="c18" class="canStyle"></canvas>
+                    </div>
+    
+    </div>
+    
+
+
+
+
+</body>
+
+<script>
+document.querySelector('.flex-container').style.display='none';
+document.getElementById('load').classList.add('loader');
+
+
+setTimeout(()=>{  
+document.getElementById('load').classList.remove('loader');
+document.querySelector('.flex-container').style.display='flex';
+
+},3000)
+
+
+
+
+
+</script>
+</html>
