@@ -99,7 +99,8 @@
 
 #dynamicDiv{
 	display: flex;
+	position: relative;
 	justify-content: center;
-	position:relative;
-
+	margin: 0 auto;
+	margin-top: 150px;
 }
